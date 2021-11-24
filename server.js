@@ -56,17 +56,32 @@ server.get("/ideias", function (req, res) {
 })
 
 server.post("/", function (req, res) {
-
-
+    const query = `
+    INSERT INTO ideas(
+        image,
+        title,
+        category,
+        description,
+        link
+    )VALUES(?,?,?,?,?);
+    `
+    const values = [
+        req.body.image,
+        req.body.title,
+        req.body.category,
+        req.body.description,
+        req.body.link,
+    ]
     db.run(query, values, function (err) {
         if (err) {
             console.log(err);
             return res.send("Erro no banco de dados");
         }
-
+        
         return res.redirect("/ideias")
 
     });
 })
-    //Liguei meu servidor na porta 3000P
+    //Liguei meu servidor na porta 3000
+
     server.listen(3000)

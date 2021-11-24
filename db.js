@@ -18,17 +18,11 @@ db.serialize(function () {
 
 module.exports = db;
 
-// Deletar um dado na tabela
 /*
+//Deletar um dado do meu banco de dados
 db.run(`DELETE FROM ideas WHERE id = ?`, [1], function(err){
     if(err) return console.log(err)
     console.log("DELETEI", this)
 })
 */
-
-    //Consultar dados na tabela
-/*  db.all(`SELECT * FROM ideas`, function(err, rows){
-     if(err) return console.log(err);
-     console.log(rows);
- }) */
 
