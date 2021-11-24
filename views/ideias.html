@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% set bodyId = "page-ideas" %}
+
+{% block title %}
+
+<title>Ideias Casa Criativa</title>
+
+{% endblock title%}
+
+
+
+{% block content %}
+<header>
+    <a href="/">
+        <img src="/logo.png" alt="Imagem da Logo">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="/">Início</a></li>
+            <li><a onclick="onOff()" href="#" class="button">Nova Idéia</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="ideas">
+    <p>Em exibição</p>
+    <h1>Idéias</h1>
+</section>
+
+<main>
+    <!--Lista de idéias adicionadas-->
+    <section id="last_ideias">
+
+        {% include "all_ideas.html" %}
+
+    </section>
+</main>
+
+<footer id="ideias">
+    <p id="footer">Com amor ❤️ <a href="https://github.com/ViOliPro" target="_blank">Vinicius Oliveira</a></p>
+</footer>
+{% endblock %}
